@@ -46,7 +46,7 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle" data-tilt data-tilt-max="20" data-tilt-speed="400" data-tilt-perspective="1000">
         <h1 class="text-light"><a href="index.html">Asilbek muxtorov</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="https://x.com/asilbek77738/" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -70,6 +70,7 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <canvas id="hero-3d"></canvas>
     <div class="hero-container" data-aos="fade-in">
       <h1>Asilbek muxtorov</h1>
      <p><span class="typed" data-typed-items="Men  dasturchiman., +3 yil tajriba., +15 loyihalar.,Siz bilan ishlashdan xursandman.">Siz bilan ishlashdan xursan</span><span class="typed-cursor" aria-hidden="true"></span></p>
@@ -89,7 +90,7 @@
 
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <center><h3>Fullstack dasturchi</h3></center><br>
@@ -100,7 +101,6 @@
                   
                   <li><i class="bi bi-chevron-right"></i> <strong>Pochtam:</strong> <span>muxtoasilbek7@gmail.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Mobil raqamim:</strong> <span>+998 94 737 70 90</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Shahar:</strong> <span>Fergana, Uzbekistan</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Telegram kanalim:</strong> <span>https://t.me/DevSecLab</span></li>
                 </ul>
               </div>
@@ -109,7 +109,6 @@
 
                
                   <li><i class="bi bi-chevron-right"></i> <strong>Darajam:</strong> <span>Fullstack, Pentester</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>asilbek77738@example.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Mavjud</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Xizmatlarim:</strong> <span>Telegram Bot,Web Sayt, Api yasash, Pentesting</span></li>
                 </ul>
@@ -215,29 +214,6 @@
 
 
 
-    <!-- ======= Contact Section ======= -->
-
-
-
-
-
-
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-
-
-
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen hidden></iframe>
-            </div>
-
-          </div>
-
-
-
-
-
   </main><!-- End #main -->
 
 
@@ -257,6 +233,17 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- 3D Effects: vanilla-tilt for interactive tilt cards -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script>
+    if (window.VanillaTilt) {
+      VanillaTilt.init(document.querySelectorAll('[data-tilt]'));
+    }
+  </script>
+
+  <!-- 3D Hero Background (Three.js) -->
+  <script type="module" src="assets/js/hero-3d.js"></script>
 
 </body>
 

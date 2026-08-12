@@ -241,19 +241,31 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
-  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #050d18 0%, #0a1c33 55%, #050d18 100%);
+}
+
+#hero-3d {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
 }
 
 #hero:before {
   content: "";
-  background: rgba(5, 13, 24, 0.3);
+  background: rgba(5, 13, 24, 0.35);
   position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1;
+  pointer-events: none;
 }
 
 #hero .hero-container {
@@ -1103,4 +1115,30 @@ section {
     width: auto;
     padding-right: 20px 15px;
   }
+}
+
+/*--------------------------------------------------------------
+# 3D Effects (Hero background + tilt cards)
+--------------------------------------------------------------*/
+[data-tilt] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+#header .profile img[data-tilt] {
+  transition: box-shadow 0.3s ease;
+}
+
+#header .profile img[data-tilt]:hover {
+  box-shadow: 0 0 25px rgba(20, 157, 221, 0.5);
+}
+
+.about .col-lg-4 img[data-tilt] {
+  border-radius: 6px;
+  box-shadow: 0 15px 35px rgba(5, 13, 24, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.about .col-lg-4 img[data-tilt]:hover {
+  box-shadow: 0 20px 45px rgba(20, 157, 221, 0.3);
 }
